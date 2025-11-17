@@ -1,0 +1,30 @@
+{
+  "name": "azecra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shabair/Nextjs_ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Shabair/Nextjs_ecommerce/issues"
+  },
+  "homepage": "https://github.com/Shabair/Nextjs_ecommerce#readme",
+  "devDependencies": {
+    "lerna": "^9.0.1",
+    "turbo": "^2.6.1",
+    "typescript": "^5.9.3"
+  }
+}
