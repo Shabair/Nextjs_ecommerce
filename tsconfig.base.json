@@ -1,0 +1,71 @@
+{
+    // Root shared TS config for all packages
+    "compilerOptions": {
+      /* ========= TARGET & ENVIRONMENT ========= */
+  
+      "target": "ES2020", 
+      // ❗ Modern JavaScript output to support latest features.
+  
+      "lib": ["DOM", "DOM.Iterable", "ESNext"],
+      // ❗ Enables browser DOM types + latest JS features.
+      // Works for Next.js, React, etc.
+  
+      "module": "ESNext",
+      // ❗ Native ES modules - required for Next.js, Storybook and modern bundlers.
+  
+      "moduleResolution": "Bundler",
+      // ❗ Best for monorepos using Turborepo / Next.js / Vite.  
+      // Automatically resolves workspace packages.
+  
+  
+      /* ========= JSX / REACT ========= */
+  
+      "jsx": "react-jsx",
+      // ❗ React 17+ JSX transform — required for Next.js & Storybook.
+  
+  
+      /* ========= TYPE SAFETY ========= */
+  
+      "strict": true,
+      // ❗ Enables ALL strict TypeScript rules (recommended).
+  
+      "skipLibCheck": true,
+      // ❗ Improves speed by skipping type-checking for node_modules.
+  
+      "esModuleInterop": true,
+      // ❗ Allows default import from CommonJS modules (like express).
+  
+      "allowJs": true,
+      // ❗ Supports JavaScript files inside packages if needed.
+  
+      "resolveJsonModule": true,
+      // ❗ Allows importing JSON files like: import data from "./data.json"
+  
+      "isolatedModules": true,
+      // ❗ Required for Next.js, Storybook, bundlers — forces every file to be isolated.
+  
+      "noUncheckedIndexedAccess": false,
+      // ❗ Can be turned ON in packages/component (strictest mode).
+      
+  
+      /* ========= OUTPUT SETTINGS ========= */
+  
+      "noEmit": true,
+      // ❗ Next.js & frontend do not emit output — compiler only checks types.
+  
+      "incremental": true,
+      // ❗ Caches type-check for faster builds.
+  
+      "declaration": false,
+      // ❗ Component library will override this to true for building types.
+  
+  
+      /* ========= PATH ALIASES ========= */
+  
+      "paths": {
+        "@/*": ["./*"]
+        // ❗ Allows absolute imports like: import Button from "@/components/Button"
+      }
+    }
+  }
+  

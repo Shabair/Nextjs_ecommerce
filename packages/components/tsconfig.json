@@ -1,46 +1,43 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
+  "extends": "../../tsconfig.base.json",
+  // ❗ Inherit base settings
+
   "compilerOptions": {
-    // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
+    /* ===== OUTPUT TYPES FOR NPM PACKAGE ===== */
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "target": "esnext",
-    "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
+    "rootDir": "src",
+    // ❗ Sets source root
 
-    // Other Outputs
-    "sourceMap": true,
+    "outDir": "dist",
+    // ❗ All compiled output goes into dist/
+
     "declaration": true,
+    // ❗ Generates .d.ts files for consumers
+
     "declarationMap": true,
+    // ❗ Enables source maps for declarations (useful in Storybook)
 
-    // Stricter Typechecking Options
+    "sourceMap": true,
+    // ❗ Generates .js.map files
+
+
+    /* ===== EXTRA STRICT RULES ===== */
+
     "noUncheckedIndexedAccess": true,
+    // ❗ Safer indexing: arr[index] is possibly undefined
+
     "exactOptionalPropertyTypes": true,
+    // ❗ Optional props must be used exactly, not loosely
 
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
-    "strict": true,
-    "jsx": "react-jsx",
     "verbatimModuleSyntax": true,
-    "isolatedModules": true,
+    // ❗ Force TS to not rewrite import/export syntax
+
     "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-    "skipLibCheck": true,
+    // ❗ Warn when importing files just for side-effects
+
+    "moduleDetection": "force"
+    // ❗ Treat files as modules when importing
   },
+
   "include": ["src", "src/**/*.stories.tsx"]
 }
