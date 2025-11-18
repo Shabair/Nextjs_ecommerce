@@ -1,6 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
-import { dirname } from "path"
+import { dirname, resolve } from "path"
 
 import { fileURLToPath } from "url"
 
@@ -11,6 +11,12 @@ import { fileURLToPath } from "url"
 function getAbsolutePath(value: string): any {
   return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)))
 }
+
+// Storybook/Vite run in ESM mode, so __dirname is not available.
+// This recreates the correct directory path using import.meta.url
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+
 const config: StorybookConfig = {
   "stories": [
     "../src/**/*.mdx",
@@ -25,6 +31,17 @@ const config: StorybookConfig = {
   "framework": {
     "name": getAbsolutePath('@storybook/react-vite'),
     "options": {}
+  },
+
+  // Vite does not read tsconfig paths by default, so we define the "@/"
+  // alias manually for Storybook to resolve modules correctly.
+  viteFinal: async (config) => {
+    config.resolve = config.resolve || {};
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      "@": resolve(__dirname, "../src")
+    };
+    return config;
   }
 };
 export default config;
