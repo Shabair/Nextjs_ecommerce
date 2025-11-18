@@ -46,6 +46,27 @@
   
       "noUncheckedIndexedAccess": false,
       // ❗ Can be turned ON in packages/component (strictest mode).
+
+      /* ========= STRICT TYPE SYSTEM ========= */
+
+      "noImplicitAny": true,
+      // ❗ You MUST explicitly type everything. No "any" allowed.
+
+      "noImplicitReturns": true,
+      // ❗ Every function MUST specify return type, and return on all code paths.
+
+      "noImplicitThis": true,
+      // ❗ Forces explicit typing when using "this".
+
+      "noUnusedLocals": true,
+      // ❗ Prevents declaring variables that are never used.
+
+      "noUnusedParameters": true,
+      // ❗ Prevents function params that are not used.
+
+      "noFallthroughCasesInSwitch": true,
+      // ❗ Switch cases MUST have break/return. Avoids bugs.
+
       
   
       /* ========= OUTPUT SETTINGS ========= */
