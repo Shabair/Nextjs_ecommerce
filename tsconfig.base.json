@@ -1,6 +1,7 @@
 {
     // Root shared TS config for all packages
     "compilerOptions": {
+
       /* ========= TARGET & ENVIRONMENT ========= */
   
       "target": "ES2020", 
@@ -84,8 +85,15 @@
       /* ========= PATH ALIASES ========= */
   
       "paths": {
-        "@/*": ["./*"]
+        "@/*": ["./*"],
         // ❗ Allows absolute imports like: import Button from "@/components/Button"
+
+        "@azecra/components": ["./packages/components/src"],
+        // ❗ then can import components like: import { Button } from "@azecra/components";
+
+        "@azecra/components/*": ["./packages/components/src/*"]
+        // ❗ then can import components like: import Button from "@azecra/components/Button"
+
       }
     }
   }

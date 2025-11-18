@@ -3,6 +3,10 @@
   // ❗ Inherit all root settings
 
   "compilerOptions": {
+
+    "baseUrl": ".",
+    // ❗ Makes this package's root the starting point for absolute and aliased imports
+    
     "plugins": [
       { "name": "next" }
       // ❗ Enables Next.js-specific type rules

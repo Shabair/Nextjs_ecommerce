@@ -35,8 +35,15 @@
     "noUncheckedSideEffectImports": true,
     // ❗ Warn when importing files just for side-effects
 
-    "moduleDetection": "force"
+    "moduleDetection": "force",
     // ❗ Treat files as modules when importing
+
+    "baseUrl": ".",
+    // ❗ Makes this package's root the starting point for absolute and aliased imports
+
+    "paths": {
+      "@/*": ["./src/*"], // Creates "@/..." alias pointing to src/, used for internal component imports
+    }
   },
 
   "include": ["src", "src/**/*.stories.tsx"]
