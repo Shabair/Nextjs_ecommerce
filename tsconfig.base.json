@@ -48,6 +48,10 @@
       "noUncheckedIndexedAccess": false,
       // ❗ Can be turned ON in packages/component (strictest mode).
 
+      /*
+      * TODO: Move Type Strict Sytem in Components and optimize in packages
+      */
+
       /* ========= STRICT TYPE SYSTEM ========= */
 
       "noImplicitAny": true,
