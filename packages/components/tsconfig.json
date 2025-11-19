@@ -40,6 +40,7 @@
 
     "baseUrl": ".",
     // ❗ Makes this package's root the starting point for absolute and aliased imports
+    
 
     "paths": {
       "@/*": ["./src/*"], // Creates "@/..." alias pointing to src/, used for internal component imports
