@@ -15,7 +15,7 @@
       "module": "ESNext",
       // ❗ Native ES modules - required for Next.js, Storybook and modern bundlers.
   
-      "moduleResolution": "Bundler",
+      "moduleResolution": "Node",
       // ❗ Best for monorepos using Turborepo / Next.js / Vite.  
       // Automatically resolves workspace packages.
   
@@ -93,10 +93,10 @@
         "@/*": ["./*"],
         // ❗ Allows absolute imports like: import Button from "@/components/Button"
 
-        "@azecra/components": ["../components/src"],
+        "@azecra/components": ["packages/components/src"],
         // ❗ then can import components like: import { Button } from "@azecra/components";
 
-        "@azecra/components/*": ["../components/src/*"]
+        "@azecra/components/*": ["packages/components/src/*"]
         // ❗ then can import components like: import Button from "@azecra/components/Button"
 
       }
