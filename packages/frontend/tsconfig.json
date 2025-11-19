@@ -6,7 +6,13 @@
 
     "baseUrl": ".",
     // ❗ Makes this package's root the starting point for absolute and aliased imports
-    
+
+    "paths": {
+      "@/*": ["./*"],
+      "@azecra/components": ["../components/src"],
+      "@azecra/components/*": ["../components/src/*"]
+    },
+
     "plugins": [
       { "name": "next" }
       // ❗ Enables Next.js-specific type rules

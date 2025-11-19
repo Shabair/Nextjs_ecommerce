@@ -2,7 +2,6 @@
     // Root shared TS config for all packages
     "compilerOptions": {
 
-      "baseUrl": ".",
 
       /* ========= TARGET & ENVIRONMENT ========= */
   
